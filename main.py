@@ -22,23 +22,23 @@ def get_parser(html):
 def extract_dailydare_url():
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
-    dailydare_div = parser.find('div', attrs={"class": "custom dailydare"})
-    dailydare_img = dailydare_div.img['src']
+    dailydare_div = parser.find("div", attrs={"class": "custom dailydare"})
+    dailydare_img = dailydare_div.img["src"]
     return urljoin(DAREBEE_URL, dailydare_img)
 
 
 def extract_wod_url():
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
-    wod_div = parser.find('div', attrs={"class": "custom darewod"})
-    wod_name = wod_div.a['href'].split('/')[2].split('.')[0]
-    img_path = '/images/workouts/'
-    wod_img = wod_name + '.jpg'
+    wod_div = parser.find("div", attrs={"class": "custom darewod"})
+    wod_name = wod_div.a["href"].split("/")[2].split(".")[0]
+    img_path = "/images/workouts/"
+    wod_img = wod_name + ".jpg"
     path = os.path.join(img_path, wod_img)
     return urljoin(DAREBEE_URL, path)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if TELEGRAM_ID is not None and API_KEY is not None:
         bot = telegram.Bot(token=API_KEY)
 
