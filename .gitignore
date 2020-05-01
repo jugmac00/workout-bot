@@ -1,0 +1,14 @@
+# environment files
+.env
+
+# virtual environment
+venv
+
+# packages
+__pycache__
+
+# ide
+.vscode
+
+# development related files
+.dev
