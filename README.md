@@ -14,7 +14,7 @@ $ python3.8 -m venv venv
 $ . venv/bin/activate
 
 # install requirements
-pip install requirements.txt
+pip install -r requirements.txt
 
 # create a `.env` file with the following content
 echo "exporting API_KEY..."
