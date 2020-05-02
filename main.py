@@ -20,6 +20,8 @@ def get_parser(html):
 
 
 def extract_dailydare_url():
+    # refactoring of this method is postponed
+    # cf https://github.com/jugmac00/workout-bot/issues/3
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
     dailydare_div = parser.find("div", attrs={"class": "custom dailydare"})
@@ -28,6 +30,8 @@ def extract_dailydare_url():
 
 
 def extract_wod_url():
+    # refactoring of this method is postponed
+    # cf https://github.com/jugmac00/workout-bot/issues/3
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
     wod_div = parser.find("div", attrs={"class": "custom darewod"})
