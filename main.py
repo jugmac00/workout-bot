@@ -32,8 +32,14 @@ def extract_wod_url():
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
     wod_div = parser.find("div", attrs={"class": "custom darewod"})
-    wod_img = Path(wod_div.a["href"]).relative_to("/").with_suffix(".jpg")
-    img_path = Path("/images")
+    # the relative URL for a workout looks like:
+    # '/workouts/princess-workout.html'
+    wod_path = Path(wod_div.a["href"])
+    # we need only the filename with the image suffix
+    wod_img = wod_path.with_suffix(".jpg").name
+    img_path = Path("/images/workouts")
+    # the final img URL looks like
+    # https://www.darebee.com/images/workouts/princess-workout.jpg
     return urljoin(DAREBEE_URL, str(img_path / wod_img))
 
 
