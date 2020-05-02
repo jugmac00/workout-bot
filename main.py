@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from urllib.parse import urljoin
 
 import httpx
@@ -35,11 +36,15 @@ def extract_wod_url():
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
     wod_div = parser.find("div", attrs={"class": "custom darewod"})
-    wod_name = wod_div.a["href"].split("/")[2].split(".")[0]
-    img_path = "/images/workouts/"
-    wod_img = wod_name + ".jpg"
-    path = os.path.join(img_path, wod_img)
-    return urljoin(DAREBEE_URL, path)
+    # the relative URL for a workout looks like:
+    # '/workouts/princess-workout.html'
+    wod_path = Path(wod_div.a["href"])
+    # we need only the filename with the image suffix
+    wod_img = wod_path.with_suffix(".jpg").name
+    img_path = Path("/images/workouts")
+    # the final img URL looks like
+    # https://www.darebee.com/images/workouts/princess-workout.jpg
+    return urljoin(DAREBEE_URL, str(img_path / wod_img))
 
 
 if __name__ == "__main__":
