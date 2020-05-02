@@ -21,14 +21,18 @@ def get_parser(html):
 
 
 def extract_dailydare_url():
+    # refactoring of this method is postponed
+    # cf https://github.com/jugmac00/workout-bot/issues/3
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
-    dailydare_div = parser.find('div', attrs={"class": "custom dailydare"})
-    dailydare_img = dailydare_div.img['src']
+    dailydare_div = parser.find("div", attrs={"class": "custom dailydare"})
+    dailydare_img = dailydare_div.img["src"]
     return urljoin(DAREBEE_URL, dailydare_img)
 
 
 def extract_wod_url():
+    # refactoring of this method is postponed
+    # cf https://github.com/jugmac00/workout-bot/issues/3
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
     wod_div = parser.find("div", attrs={"class": "custom darewod"})
@@ -43,7 +47,7 @@ def extract_wod_url():
     return urljoin(DAREBEE_URL, str(img_path / wod_img))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if TELEGRAM_ID is not None and API_KEY is not None:
         bot = telegram.Bot(token=API_KEY)
 
