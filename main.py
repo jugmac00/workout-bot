@@ -1,8 +1,8 @@
 import os
+import urllib.request
 from pathlib import Path
 from urllib.parse import urljoin
 
-import httpx
 import telegram
 from bs4 import BeautifulSoup
 
@@ -12,8 +12,8 @@ TELEGRAM_ID = os.getenv("TELEGRAM_ID")
 
 
 def get_source_code(url):
-    r = httpx.get(url)
-    return r.text
+    r = urllib.request.urlopen(url)
+    return r.read()
 
 
 def get_parser(html):
