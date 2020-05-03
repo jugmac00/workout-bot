@@ -10,3 +10,4 @@ All notable changes to this project will be documented in this file.
 - Changelog (this file here!)
 - This is now an installable package
 - Test on Travis
+- Test via GitHub Actions
