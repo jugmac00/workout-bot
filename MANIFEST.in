@@ -1,0 +1,10 @@
+include *.md
+include *.rst
+include *.py
+include *.yaml
+include tox.ini
+include .gitignore
+include .travis.yml
+include *.txt
+include .isort.cfg
+include LICENSE
