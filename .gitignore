@@ -3,12 +3,19 @@
 
 # virtual environment
 venv
+.tox
 
 # packages
 __pycache__
+*.egg-info
+build
 
 # ide
 .vscode
 
 # development related files
 .dev
+
+# coverage
+.coverage
+htmlcov

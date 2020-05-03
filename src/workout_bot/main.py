@@ -47,11 +47,12 @@ def extract_wod_url():
     return urljoin(DAREBEE_URL, str(img_path / wod_img))
 
 
-if __name__ == "__main__":
+def main():
     if TELEGRAM_ID is not None and API_KEY is not None:
         bot = telegram.Bot(token=API_KEY)
 
         dailydare_url = extract_dailydare_url()
+        print(dailydare_url)
         bot.send_photo(chat_id=int(TELEGRAM_ID), photo=dailydare_url)
 
         wod_url = extract_wod_url()
@@ -59,3 +60,7 @@ if __name__ == "__main__":
     else:
         print("Missing API_KEY or TELEGRAM_ID.")
         print("Please make sure to load environment variables.")
+
+
+if __name__ == "__main__":
+    main()
