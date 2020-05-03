@@ -8,3 +8,4 @@ include .travis.yml
 include *.txt
 include .isort.cfg
 include LICENSE
+recursive-include src *.py
