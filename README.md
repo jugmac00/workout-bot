@@ -1,3 +1,5 @@
+[![CI Status](https://github.com/jugmac00/workout-bot/workflows/CI/badge.svg?branch=master)](https://github.com/jugmac00/workout-bot/actions?workflow=CI)
+
 # workout bot
 
 Once set up properly, this bot will send you a daily workout.
