@@ -11,3 +11,5 @@ All notable changes to this project will be documented in this file.
 - This is now an installable package
 - Test on Travis
 - Test via GitHub Actions
+- Fixed finding workout images
+- Updated linters
