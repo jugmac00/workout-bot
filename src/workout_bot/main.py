@@ -25,7 +25,7 @@ def extract_dailydare_url():
     # cf https://github.com/jugmac00/workout-bot/issues/3
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
-    dailydare_div = parser.find("div", attrs={"class": "custom dailydare"})
+    dailydare_div = parser.find("div", attrs={"class": "dailydare"})
     dailydare_img = dailydare_div.img["src"]
     return urljoin(DAREBEE_URL, dailydare_img)
 
@@ -35,7 +35,7 @@ def extract_wod_url():
     # cf https://github.com/jugmac00/workout-bot/issues/3
     html = get_source_code(url=DAREBEE_URL)
     parser = get_parser(html)
-    wod_div = parser.find("div", attrs={"class": "custom darewod"})
+    wod_div = parser.find("div", attrs={"class": "darewod"})
     # the relative URL for a workout looks like:
     # '/workouts/princess-workout.html'
     wod_path = Path(wod_div.a["href"])
