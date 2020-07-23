@@ -52,7 +52,6 @@ def main():
         bot = telegram.Bot(token=API_KEY)
 
         dailydare_url = extract_dailydare_url()
-        print(dailydare_url)
         bot.send_photo(chat_id=int(TELEGRAM_ID), photo=dailydare_url)
 
         wod_url = extract_wod_url()
