@@ -3,13 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Added
-- Basic functionality, ie send workouts by Telegram bot
-- Test framework via tox
-- Basic pre-commit config
-- Changelog (this file here!)
-- This is now an installable package
-- Test on Travis
+- Add basic functionality, ie send workouts by Telegram bot
+- Add test framework via tox
+- Add basic pre-commit config
+- Add changelog (this file here!)
+- Make package installable
+- Test on Travis (superseded)
 - Test via GitHub Actions
-- Fixed finding workout images
-- Updated linters
+- Update linters
+- Fix finding workout images
