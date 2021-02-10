@@ -12,3 +12,4 @@ All notable changes to this project will be documented in this file.
 - Test via GitHub Actions
 - Update linters
 - Fix finding workout images
+- Add support for Python 3.9
