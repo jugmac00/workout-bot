@@ -10,7 +10,7 @@ from workout_bot.main import extract_wod_url
 
 def test_extract_dailydare_url():
     URL = extract_dailydare_url()
-    assert URL.startswith("https://www.darebee.com/images/grid/dares/")
+    assert URL.startswith("https://www.darebee.com/images/promo/dares/")
 
 
 def test_extract_wod_url():
