@@ -8,7 +8,7 @@ apscheduler==3.6.3
     # via python-telegram-bot
 beautifulsoup4==4.9.3
     # via Workout Bot (setup.py)
-certifi==2020.12.5
+certifi==2022.12.7
     # via python-telegram-bot
 cffi==1.14.4
     # via cryptography
